@@ -1,0 +1,244 @@
+body {
+  font-family: "Roboto Mono", serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  color: #000000;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+}
+
+header a {
+  color: #000000;
+  text-decoration: none;
+  margin: 0 0.5rem;
+
+}
+
+header a:hover {
+  color: #a52beb;
+  text-decoration: underline;
+}
+
+.hero {
+  text-align: center;
+  background: linear-gradient(135deg, #fefdfd, #a9a8a8);
+  animation: slideIn 1s ease-in-out;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #222;
+}
+
+.hero img {
+  width: 80%;
+  max-width: 600px;
+  margin: 1em 0;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #fafafa;
+}
+
+.project {
+  overflow: hidden;
+  text-align: center;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.project:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.project img:hover {
+  transform: scale(1.05);
+}
+
+.project h3 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.contact {
+  padding: 2rem;
+  background: #fff;
+  text-align: center;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* animation: fadeInUp 1s ease-in-out; */
+}
+
+.name {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.name input[type="text"],
+select {
+  width: 42%;
+}
+
+.contact input,
+.contact textarea,
+.contact button {
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border: 1px solid black;
+  font-size: 1rem;
+}
+
+.contact button {
+  background-color: #111;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.contact button:hover {
+  background-color: #007acc;
+}
+
+footer {
+  padding: 1rem;
+  color: #111;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+button {
+  float: inline-end;
+}
+
+b {
+  float: inline-start;
+}
+
+.line {
+  margin: 0;
+  height: 1px;
+  background-color: #ccc;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 1rem;
+  }
+
+  .project img {
+    height: 120px;
+  }
+
+  .name input[type="text"],
+  .contact textarea {
+    width: 100%;
+  }
+
+  .contact form {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header a {
+    margin: 0.5rem 0;
+  }
+
+  .hero img {
+    width: 90%;
+  }
+
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .project img {
+    height: 150px;
+  }
+
+  .name input[type="text"] {
+    width: 100%;
+  }
+
+  .contact form {
+    padding: 0.5rem;
+  }
+
+  .contact button {
+    width: 100%;
+  }
+}
